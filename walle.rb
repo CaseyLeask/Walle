@@ -7,8 +7,19 @@ class Walle
     @direction = direction
   end
 
-  def move
+  def valid?
+    !!@x.between?(0,4) && 
+      @x.is_a?(Integer) &&
+      @y.between?(0,4) && 
+      @y.is_a?(Integer) &&
+      [:north, :south, :east, :west].member?(@direction)
+
   end
+
+  def move
+    instance_eval "move_#{@direction}"
+  end
+
 
   def left
     case @direction
@@ -38,6 +49,31 @@ class Walle
 
   def report
     "X: #{@x}, Y: #{@y}, F: #{@direction}"
+  end
+
+private
+  def move_north
+    if @y < 4
+      @y += 1
+    end
+  end
+
+  def move_east
+    if @x < 4
+      @x += 1
+    end
+  end
+
+  def move_south
+    if @y > 0
+      @y -= 1
+    end
+  end
+
+  def move_west
+    if @x > 0
+      @x -= 1
+    end
   end
 
 end
