@@ -8,12 +8,11 @@ class Walle
   end
 
   def valid?
-    !!@x.between?(0,4) && 
-      @x.is_a?(Integer) &&
-      @y.between?(0,4) && 
-      @y.is_a?(Integer) &&
-      [:north, :south, :east, :west].member?(@direction)
-
+    @x.between?(0,4) && 
+    @x.is_a?(Integer) &&
+    @y.between?(0,4) && 
+    @y.is_a?(Integer) &&
+    [:north, :south, :east, :west].member?(@direction)
   end
 
   def move
