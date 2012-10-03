@@ -16,4 +16,10 @@ class TestWalle < Test::Unit::TestCase
     assert_equal(:north, robot.direction)
   end
 
+  def test_basic_report
+    robot = Walle.new(0, 0, :north)
+
+    assert_equal("X: 0, Y: 0, F: north", robot.report)
+  end
+
 end
