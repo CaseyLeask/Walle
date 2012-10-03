@@ -47,7 +47,7 @@ class Walle
   end
 
   def report
-    "X: #{@x}, Y: #{@y}, F: #{@direction}"
+    "#{@x},#{@y},#{@direction.upcase}"
   end
 
 private

@@ -28,7 +28,7 @@ class TestWalle < Test::Unit::TestCase
 
     robot.left
 
-    assert_equal("X: 0, Y: 0, F: west", robot.report)
+    assert_equal("0,0,WEST", robot.report)
   end
 
   def test_basic_right
@@ -36,47 +36,47 @@ class TestWalle < Test::Unit::TestCase
 
     robot.right
 
-    assert_equal("X: 0, Y: 0, F: east", robot.report)
+    assert_equal("0,0,EAST", robot.report)
   end
 
   def test_basic_report
     robot = Walle.new(0, 0, :north)
 
-    assert_equal("X: 0, Y: 0, F: north", robot.report)
+    assert_equal("0,0,NORTH", robot.report)
   end
 
   def test_basic_move_north
     robot = Walle.new(0, 0, :north)
     robot.move
 
-    assert_equal("X: 0, Y: 1, F: north", robot.report)
+    assert_equal("0,1,NORTH", robot.report)
   end
 
   def test_move_north_boundary
     robot = Walle.new(0, 4, :north)
     robot.move
 
-    assert_equal("X: 0, Y: 4, F: north", robot.report)
+    assert_equal("0,4,NORTH", robot.report)
   end
 
   def test_move_east_boundary
     robot = Walle.new(4, 0, :east)
     robot.move
 
-    assert_equal("X: 4, Y: 0, F: east", robot.report)
+    assert_equal("4,0,EAST", robot.report)
   end
 
   def test_move_south_boundary
     robot = Walle.new(0, 0, :south)
     robot.move
 
-    assert_equal("X: 0, Y: 0, F: south", robot.report)
+    assert_equal("0,0,SOUTH", robot.report)
   end
 
   def test_move_west_boundary
     robot = Walle.new(0, 0, :west)
     robot.move
 
-    assert_equal("X: 0, Y: 0, F: west", robot.report)
+    assert_equal("0,0,WEST", robot.report)
   end
 end
