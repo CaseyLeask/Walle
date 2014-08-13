@@ -1,3 +1,5 @@
+#! /usr/bin/ruby
+
 require_relative 'walle'
 Dir.glob('./tests/*.dat') do |data_file|
   robot = Walle.new(-1, -1, :invalid)

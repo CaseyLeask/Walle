@@ -1,3 +1,4 @@
+#! /usr/bin/ruby
 require_relative "walle"
 require 'test/unit'
 
